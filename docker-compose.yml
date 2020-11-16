@@ -1,0 +1,11 @@
+version: '3.3'
+services:
+  db:
+    container_name: postgres
+    image: postgres:10.5-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: kyt32014
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - 5432:5432
