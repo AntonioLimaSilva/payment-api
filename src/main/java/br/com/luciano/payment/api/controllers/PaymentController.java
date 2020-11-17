@@ -28,7 +28,7 @@ public class PaymentController {
             @ApiResponse(code = 401, message = "Unauthorized", response = ErrorCustom.class),
             @ApiResponse(code = 404, message = "Not Found", response = ErrorCustom.class),
             @ApiResponse(code = 500, message = "InternalServerError", response = ErrorCustom.class)})
-    @ApiOperation("Cadatra uma forma de pagamento")
+    @ApiOperation("Register a form of payment")
     @PostMapping
     public ResponseEntity<PaymentResponse> create(@RequestBody @Valid PaymentRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED)
@@ -40,7 +40,7 @@ public class PaymentController {
             @ApiResponse(code = 401, message = "Unauthorized", response = ErrorCustom.class),
             @ApiResponse(code = 404, message = "Not Found", response = ErrorCustom.class),
             @ApiResponse(code = 500, message = "InternalServerError", response = ErrorCustom.class)})
-    @ApiOperation("Consulta uma forma de pagamento")
+    @ApiOperation("Query a form of payment")
     @GetMapping("/{number}")
     public ResponseEntity<PaymentResponse> verify(@PathVariable String number) {
         return ResponseEntity.status(HttpStatus.OK)
